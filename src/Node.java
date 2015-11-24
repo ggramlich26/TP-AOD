@@ -2,7 +2,7 @@
  * The Class Node represents a node in the call tree.
  * This means that a node represents a solution to a certain subproblem. The node objects will be reused and therefor represent a more general subproblem in each iteration step.
  * Each node has to have a cost, which stores the minimal cost for the subproblem the node is used for.
- * It also has a variable patch of type StringBuilder, which stores the optimal patch for the nodes subproblem.
+ * It also has a variable patch of type String, which stores the optimal patch for the nodes subproblem.
  *
  * @ author Georg Gramlich
  */
@@ -15,7 +15,7 @@ public class Node{
 
 	public Node(){
 		cost = Integer.MAX_VALUE;
-		patch = new StringBuilder();
+		patch = "";
 		inLine = outLine = 0;
 	}
 
@@ -64,19 +64,19 @@ public class Node{
 		return patch;
 	}
 
-	private int getInLine(){
+	public int getInLine(){
 		return this.inLine;
 	}
 
-	private void setInLine(int line){
+	public void setInLine(int line){
 		this.inLine = line;
 	}
 
-	private int getOutLine(){
+	public int getOutLine(){
 		return this.outLine;
 	}
 
-	private void setOutLine(int line){
+	public void setOutLine(int line){
 		this.outLine = line;
 	}
 }
